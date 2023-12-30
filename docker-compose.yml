@@ -1,0 +1,15 @@
+services:
+  web:
+    # Configuration for the web application container
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+  db:
+    # Configuration for the MongoDB container
+    image: mongo
+    ports:
+      - "27017:27017"
